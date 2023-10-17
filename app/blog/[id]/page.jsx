@@ -4,7 +4,7 @@ import MDXComponents from "@/components/MDXComponents";
 
 export default async function Post ({params}) {
     const {id} = params;
-    const {content, meta} = await getFileBySlug(id);
+    const {content} = await getFileBySlug(id);
 
     return (
         <>
