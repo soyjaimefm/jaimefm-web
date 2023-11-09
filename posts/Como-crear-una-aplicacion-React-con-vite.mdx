@@ -1,0 +1,235 @@
+---
+title: 'Cómo crear una aplicación React con Vite'
+date: '5/09/2023'
+---
+
+## Cómo crear una aplicación React con Vite
+
+En este post te presento Vite, una herramienta muy útil para crear la estructura de un proyecto en React de manera rápida y sin ninguna configuración necesaria. Además, te detallaré algunas posibles configuraciones que te pueden venir muy bien para casos más específicos.
+
+## ¿Qué es Vite?
+
+Vite es una herramienta de compilación y tooling que tiene como objetivo proporcionar una experiencia de desarrollo más rápida y ágil para proyectos web modernos. Es **independiente de frameworks** y tiene plantillas para iniciar proyectos en vanilla JS (sin utilizar frameworks), y también utilizando Vue, React, Preact, Svelte o Lit (tanto usando Javascript como Typescript como lenguaje). Consta de dos partes principales:
+
+- **Un servidor de desarrollo** que proporciona mejoras enriquecidas de funcionalidades sobre módulos ES nativos, por ejemplo Hot Module Replacement (HMR) extremadamente rápido.
+- **Un comando de compilación** que empaqueta tu código con Rollup, preconfigurado para generar recursos estáticos altamente optimizados para producción.
+
+### ¿Por qué Vite?
+
+Desde hace tiempo, en el frontend, conocemos herramientas como Webpack, Rollup y Parcel que han permitido mejorar considerablemente la experiencia de desarrollo de aplicaciones web.
+
+A medida que las aplicaciones web van creciendo se incrementa la cantidad de código, el número de módulos y los servidores de desarrollo cada vez tardan más en reflejar un cambio en el navegador. Esto afecta en gran medida a la productividad de los desarrolladores.
+
+Vite corrige estos problemas utilizando nuevos avances en el ecosistema de la web (disponibilidad de módulos ES nativos en el navegador, y herramientas JavaScript escritas en lenguajes de compilación a nativo).
+
+Por otro lado, en la nueva documentación oficial de React se ha dejado de recomendar create-react-app, de hecho, la última actualización de este paquete es de abril de 2022.
+
+### Requisitos
+
+Para crear un proyecto en React con Vite lo primero que necesitamos es tener instalado Node y npm. Para comprobarlo utilizamos `node -v` y `npm -v`.
+En caso de no tenerlos instalados podemos hacerlo con el siguiente comando:
+
+```bash
+curl -fsSL <https://deb.nodesource.com/setup_20.x> | sudo -E bash - &&\\
+sudo apt-get install -y nodejs
+```
+
+Si no funciona podemos buscar aquí el comando concreto para cada sistema operativo: [https://github.com/nodesource/distributions](https://github.com/nodesource/distributions)
+
+Si estamos en Windows podemos descargarlo desde la siguiente url [https://nodejs.org/es](https://nodejs.org/es) Y si estamos en Mac podemos utilizar Brew.
+
+## Inicio del proyecto e instalación de dependencias
+
+Una vez que tengamos instaladas todas las herramientas necesarias en nuestro equipo iremos a un directorio donde queramos ubicar nuestro proyecto y ejecutaremos el siguiente comando:
+
+(Además de existir una plantilla para un proyecto en React, Vite también cuenta con plantillas para: `vanilla`, `vanilla-ts`, `vue`, `vue-ts`, `react`, `react-ts`, `react-swc`, `react-swc-ts`, `preact`, `preact-ts`, `lit`, `lit-ts`, `svelte`, `svelte-ts`, `solid`, `solid-ts`, `qwik`, `qwik-ts`).
+
+```bash
+npm create vite@latest my-react-app -- --template react
+```
+
+Este comando habrá creado la estructura de carpetas y configuración necesaria para iniciar nuestro proyecto. A partir de aquí, tendremos que entrar al directorio raíz del proyecto e instalar las dependencias con npm (la instrucción anterior ya nos habrá sugerido estos comandos).
+
+```bash
+cd my-react-app
+npm install
+```
+
+Ahora ejecutaremos el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+Al ejecutarlo nos aparecerá por consola información relativa a este servidor de desarrollo en local:
+
+```bash
+VITE v4.4.3  ready in 696 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
+
+Si accedemos a la url local que nos proporciona veremos la siguiente web de ejemplo:
+
+![Untitled](/como-crear-una-app-react-con-vite-img1.png)
+
+### Estructura de carpetas
+
+La estructura de carpetas generada por Vite es la siguiente:
+
+```bash
+.
+├── index.html
+├── package.json
+├── package-lock.json
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+```
+
+Dado que estamos tratando cómo crear una aplicación con vite vamos a centrarnos en los archivos **package.json y vite.config.js**. No entraremos en conceptos más específicos de desarrollo con React.
+
+```json
+{
+  "name": "my-react-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "vite": "^4.4.0"
+  }
+}
+```
+
+En este archivo podemos ver las dependencias y las dependencias de desarrollo, además de los **scripts que necesitaremos para iniciar el servidor o compilar nuestro proyecto**. De esta manera, si ejecutamos `npm run dev` iniciaremos el servidor de desarrollo y podremos ver nuestra aplicación en el navegador. Y, si ejecutamos `npm run build` se generará el empaquetado de la aplicación.
+
+### Build y configuraciones de build
+
+Al ejecutar el comando de build, se generarán todos los estáticos en la ruta `/dist` . La configuración por defecto generará la siguiente estructura: 
+
+```json
+.
+├── assets
+│   ├── index-d526a0c5.css
+│   ├── index-e92ae01e.js
+│		├── index-a8896076.js
+│   └── react-35ef61ed.svg
+├── index.html
+└── vite.svg
+```
+
+Como podemos comprobar, los estáticos se ubican dentro de una carpeta assets y sus nombres son del tipo `index-[hash].js`. Se puede observar también que se generan varios .js, uno de ellos será el “entry file” que estará referenciado desde el .html y el resto serán “chuncks” ya que el .js se va dividiendo en distintos archivos en lugar de generar uno demasiado grande.
+
+Modificando el archivo de configuración `vite.config.js` **podemos personalizar la ruta de salida, la manera en la que se organizan los estáticos y sus nombres entre otras cosas**. Por defecto, tenemos la siguiente configuración:
+
+```jsx
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+```
+
+A continuación, haremos un repaso de algunas de las opciones de configuración que tenemos disponibles para modificar la manera en la que se generan los estáticos de nuestra aplicación.
+
+#### Nueva ruta para la carpeta dist
+
+Como ya hemos indicado, los estáticos se generarán por defecto en la ruta `/dist`. Pero, si añadimos la siguiente configuración:
+
+```jsx
+build: {
+  outDir: 'output/another-folder'
+},
+```
+
+Los estáticos se generarán dentro de la ruta `output/another-folder`.
+
+Esto puede ser útil cuando nuestro servidor o el CMS que utilicemos requiera que estos archivos se ubiquen en una ruta determinada.
+
+#### Nombre de los estáticos
+
+Añadiendo las siguientes configuraciones conseguimos nombres fijos para estos archivos:
+
+```jsx
+rollupOptions: {
+    output: {
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
+        entryFileNames: '[name].js',
+    }
+},
+```
+
+El **entryFileNames** será para el .js que constituye el punto de entrada de nuestra aplicación.
+
+**ChunckFileNames** será para el resto de “trozos” de .js generados.
+
+**AssetFileNames** será para el resto de archivos (.css y .svg por ejemplo).
+
+La estructura del output de nuestra aplicación tendrá ahora la siguiente forma:
+
+```bash
+.
+├── index.css
+├── index.html
+├── index.js
+├── react.svg
+└── vite.svg
+```
+
+#### Directorio base
+
+Tenemos disponible una opción `base` que por defecto tendrá el siguiente valor `base: '/'`, esta opción fijará la **ruta base desde la que se hospedará nuestra aplicación en el servidor** y todas las urls que referencien los distintos archivos (css, js, svg, etc.) de nuestra aplicación partirán de esta ruta base. Veamos como cambian las urls de nuestro index.html conforme modificamos esta opción.
+
+Opción por defecto:
+
+```html
+<script type="module" crossorigin src="/index.js"></script>
+<link rel="stylesheet" href="/index.css">
+```
+
+Imaginemos que nuestra aplicación se va a servir dentro de la ruta de una web www.example.com/shop/. Si alojamos nuestra aplicación con esta configuración por defecto, lo más probable es que no encuentre los estáticos ya que empezará a buscarlos en la ruta `/` cuando en realidad estarán ubicados en `/shop/`. Para evitar este problema podemos utilizar la configuración `base: '/shop'`. De esta forma las rutas tendrán la siguiente estructura:
+
+```html
+<script type="module" crossorigin src="/shop/index.js"></script>
+<link rel="stylesheet" href="/shop/index.css">
+```
+
+En otras ocasiones, necesitaremos que las rutas de nuestra aplicación sean relativas (de esta manera no dependerán del directorio donde está alojada la aplicación dentro del servidor). Para ello utilizaremos la configuración con `base: './'`. Las rutas quedarán así en este caso:
+
+```html
+<script type="module" crossorigin src="./index.js"></script>
+<link rel="stylesheet" href="./index.css">
+```
+
+## Conclusión
+
+Vite es una gran herramienta para el desarrollo de aplicaciones web. Su sencillez de uso, variedad de configuraciones y su velocidad de funcionamiento la convierten en la mejor opción para crear una aplicación en React (si no quieres usar otros frameworks como Next.js Gatsby.js o Remix.js). Además, cuenta con una gran comunidad detrás y una extensa documentación.
