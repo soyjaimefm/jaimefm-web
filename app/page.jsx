@@ -1,11 +1,30 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone } from 'react-icons/fa';
+import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone, FaCss3 } from 'react-icons/fa';
+import Projects from '@/components/Projects';
 
 export default function Home() {
   return (
     <main className="min-h-full">
-      <section className="text-gray-600 bg-softblue font-mono">
+      <section className="bg-gray-100 dark:bg-gray-900">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div className="mr-auto place-self-center lg:col-span-7">
+            <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">¡Hola! 👋🏻 Soy Jaime FM.</h2>
+            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Desarrollador de software.</h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Estoy especializado en desarrollo web y mi objetivo principal es crear productos digitales adaptados al cliente y al usuario final, poniendo mucha atención en la calidad y simplicidad tanto del diseño como de la solución técnica adoptada.</p>
+            <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
+              Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
+            </a>
+            <a href="/about-me" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+              Conóceme&nbsp;<span className='hidden lg:inline'>un poco mejor</span>
+            </a>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img className='rounded-md' src="/jaime-byn.jpeg" alt="Jaime Fernández Moreno" />
+          </div>
+        </div>
+      </section>
+      {/* OLD HERO SECTION <section className="text-gray-600 bg-softblue font-mono">
         <header className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h2 className="sm:text-4xl text-3xl mb-4 font-bold text-darkblue">JAIME <span className='text-orange'>FM</span></h2>
@@ -20,143 +39,99 @@ export default function Home() {
             <img className="object-cover object-center rounded" alt="Jaime FM" src="/jaime-byn.jpeg" />
           </div>
         </header>
-      </section>
+      </section> */}
 
-      <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-12 mx-auto">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className=''>
-              <FaJs className='text-darkblue w-8 h-8'></FaJs>
-              <h2 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">JavaScript</h2>
+      {/* <section class="bg-white dark:bg-gray-900">
+        <div class="container px-6 py-12 mx-auto">
+          <h2 className="max-w-2xl mb-4 font-bold text-2xl md:text-3xl xl:text-4xl dark:text-white">Tecnologías que utilizo.</h2>
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className='flex items-center'>
+              <FaJs className='size-8 text-yellow-300' />
+              <h1 class="ml-2 text-xl font-semibold text-gray-800 dark:text-white">JavaScript</h1>
+              <p class="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida sem feugiat.</p>
             </div>
-
             <div>
-              <div className='w-8 h-8 relative rounded-sm'>
-                <Image src={'/javascript-logo.png'} layout='fill' objectFit='cover' alt='JavaScript logo' />
-              </div>
-
-              <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">Fully Responsive Components</h1>
-
-              <p className="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida sem feugiat.</p>
+              <FaHtml5 className='size-8 text-orange' />
+              <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">HTML</h1>
             </div>
-
             <div>
-
-              <FaReact className='text-darkblue w-8 h-8'></FaReact>
-              <h2 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">RTL Languages Support</h2>
-
-              <p className="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida sem feugiat.</p>
-            </div>
-            <div className="space-y-3">
-              <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
-                <FaHtml5 className='text-darkblue w-8 h-8'></FaHtml5>
-              </span>
-              <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">HTML</h1>
-              <p className="text-gray-500 dark:text-gray-300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
-              </p>
+              <FaCss3 className='size-8 text-blue-600' />
+              <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">CSS</h1>
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="bg-white dark:bg-gray-900">
-        <div className="container px-6 py-10 mx-auto">
-          <h2 className="font-mono font-semibold text-2xl text-darkblue lg:text-3xl dark:text-white">Tecnologías que utilizo</h2>
-          <p>En cuanto a lenguajes de programación, tecnologías o herramientas, mi opinión es que la clave está en encontrar la más adecuada para cada proyecto. Durante mi experiencia, he tenido la oportunidad de aprender y utilizar las siguientes:</p>
-          <div className="mt-8 xl:mt-12 lg:flex lg:items-center">
+      </section> */}
 
 
-            <div className="lg:flex lg:w-1/2 lg:justify-center">
-              <Image className='rounded' src='/setup-desk.jpeg' width={300} height={100} alt='programmer desk' />
-            </div>
-            <div className="grid w-full grid-cols-1 gap-8 lg:w-1/2 xl:gap-16 md:grid-cols-2">
-              <div className="space-y-3">
-                <div className='w-8 h-8 relative rounded-sm'>
-                  <Image src={'/javascript-logo.png'} layout='fill' objectFit='cover' alt='JavaScript logo' />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">JavaScript</h3>
-              </div>
-
-              <div className="space-y-3">
-                <div className='w-8 h-8 relative rounded-sm'>
-                  <Image src={'/nodejs-logo.png'} layout='fill' objectFit='cover' alt='NodeJS logo' />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">Node.js</h3>
-              </div>
-
-              <div className="space-y-3">
-                <div className='w-8 h-8 relative rounded-sm'>
-                  <Image src={'/javascript-logo.png'} layout='fill' objectFit='cover' alt='JavaScript logo' />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">JavaScript</h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Empecé a trabajar con este lenguaje hace ya 4 años y nunca paro de aprender cosas nuevas.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
-                  </svg>
-                </span>
-
-                <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
-
-                <p className="text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
-                </p>
-              </div>
-
-
-
-              <div className="space-y-3">
-                <span className="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
-                </span>
-
-                <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">Simple & clean designs</h1>
-
-                <p className="text-gray-500 dark:text-gray-300">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum evenietdsafdsasdlfjlñaksdjflkñasjdlkfjasklñdf aslñfjsdlkajfsdlñkjfalñ sdjf lajsdflña sdlñf jasdl j
-                </p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </section>
 
       {/* Mi trabajo */}
-      <section className="bg-darkblue">
-        <div className="container px-6 py-12 mx-auto">
-          <h2 className="mt-2 text-2xl font-semibold  md:text-3xl text-gray-200">Mi trabajo</h2>
-          <p className="mt-3 text-gray-300">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los servicios que puedo ofrecer.</p>
+
+      <section class="bg-white dark:bg-gray-900">
+        {/* <div class="gap-16 item-center pt-2 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:pt-4 lg:px-3"></div>s */}
+        <div className="container px-12 py-12 mx-auto">
+          <h2 class="text-4xl font-extrabold text-darkblue dark:text-white">Mi trabajo</h2>
+          <p className="mt-3 text-gray-600">Aquí tienes una pequeña muestra de proyectos que he realizado.</p>
+
+          <div className="divide-y">
+            <div class="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h3 class="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marisol Sánchez Psicóloga</h3>
+                <p class="mb-4">Una web para una clínica de psicología construida sobre Wordpress como CMS utilizando divi como constructor.</p>
+                <p>Cuenta con formulario de contacto, blog, páginas informativas y un formulario para suscribirse a newsletter.</p>
+              </div>
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <img class="w-full rounded-lg col-span-2" src="/marisol-psicologa.png" alt="web Marisol Psicóloga" />
+                <img class="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" />
+              </div>
+            </div>
+
+            <div class="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <img class="w-full rounded-lg col-span-2" src="/lapicara-web.png" alt="web La Pícara" />
+                {/* <img class="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" /> */}
+              </div>
+
+              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h3 class="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">La Pícara producciones</h3>
+                <p class="mb-4">Esta es otra web desarrollada con Wordpress y Divi con un diseño one page.</p>
+                <p>En este caso, la implementación de los estilos fue todo un reto ya que partíamos de un diseño hecho con Figma por una diseñadora.</p>
+              </div>
+            </div>
+
+
+            <div class="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h3 class="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Adventures in class</h3>
+                <p class="mb-4">Para este proyecto utilicé tecnologías similares a los anteriores proyectos. Pero además añadí un e-commerce.</p>
+                <p>Por otro lado en este proyecto tenemos también muchos estilos personalizados mediante código CSS para cumplir con un diseño más custom.</p>
+              </div>
+              <div class="grid grid-cols-3 gap-4 mt-8">
+                <img class="w-full rounded-lg col-span-2" src="/adventures-in-class-web.png" alt="web Adventures in class" />
+                <img class="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/adventures-in-class-web-mobile.png" alt="web Adventures in class móvil" />
+              </div>
+            </div>
+
+
+          </div>
 
 
         </div>
-
-
       </section>
+
 
 
 
 
       {/* Contacto */}
       <section className="bg-softblue">
-        <div className="container px-6 py-12 mx-auto">
+        <div className="container px-12 py-12 mx-auto">
           <div>
             {/* <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p> */}
-            <h2 className="mt-2 text-2xl font-semibold  md:text-3xl text-darkblue">Contacta conmigo</h2>
+            <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Contacta conmigo</h2>
             <p className="mt-3 text-gray-600">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los servicios que puedo ofrecer.</p>
           </div>
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
-            <Link href={'mailto:jaimefrm93@gmail.com'}>
+            <Link className='hover:scale-105 transition-transform' href={'mailto:jaimefrm93@gmail.com'}>
               <span className="inline-block p-3 text-darkblue rounded-full bg-gray-100">
                 <FaRegEnvelope className='w-6 h-6'></FaRegEnvelope>
               </span>
@@ -164,7 +139,7 @@ export default function Home() {
               <p className="mt-2 text-gray-500 dark:text-gray-400">Estaré encantado de ayudarte.</p>
               <p className="mt-2 text-cyan-700">jaimefrm93@gmail.com</p>
             </Link>
-            <Link href={'https://www.instagram.com/soyjaimefm/?hl=es'}>
+            <Link className='hover:scale-105 transition-transform' href={'https://www.instagram.com/soyjaimefm/?hl=es'}>
               <span className="inline-block p-3 text-darkblue rounded-full bg-gray-100">
                 <FaInstagram className='w-6 h-6'></FaInstagram>
               </span>
@@ -172,7 +147,7 @@ export default function Home() {
               <p className="mt-2 text-gray-500 dark:text-gray-400">Escribe un mensaje directo.</p>
               <p className="mt-2 text-cyan-700">@soyjaimefm</p>
             </Link>
-            <Link href={'tel:+34687722498'}>
+            <Link className='hover:scale-105 transition-transform' href={'tel:+34687722498'}>
               <span className="inline-block p-3 text-darkblue rounded-full bg-gray-100">
                 <FaPhone className='w-6 h-6'></FaPhone>
               </span>
