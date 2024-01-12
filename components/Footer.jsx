@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import headerNavLinks from "@/data/headerNavLinks";
 import { FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import Socials from './Socials';
 
 export default function Footer() {
     return (
@@ -19,20 +20,7 @@ export default function Footer() {
                 <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
                 <div className="flex flex-col items-center sm:flex-row sm:justify-between">
                     <p className="text-sm text-gray-500 dark:text-gray-300">Desarrollado con 💙 por Jaime Fernández Moreno</p>
-                    <div className="flex -mx-2">
-                        <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Instagram">
-                            <FaInstagram />
-                        </a>
-                        <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Twitter">
-                            <FaTwitter />
-                        </a>
-                        <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Github">
-                            <FaGithub />
-                        </a>
-                        <a href="#" className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400" aria-label="Youtube">
-                            <FaYoutube />
-                        </a>
-                    </div>
+                    <Socials />
                 </div>
             </div>
         </footer>

@@ -1,18 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone, FaCss3 } from 'react-icons/fa';
+import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone, FaTwitter, FaYoutube, FaGithub, FaCss3, FaCode, FaGlobe, FaHandshake } from 'react-icons/fa';
 import Projects from '@/components/Projects';
+import Socials from '@/components/Socials';
 
 export default function Home() {
   return (
     <main className="min-h-full">
-      <section className="bg-gray-100 dark:bg-gray-900">
+      {/* Hero section */}
+      <section className="dark:bg-gray-900">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">¡Hola! 👋🏻 Soy Jaime FM.</h2>
             <h1 className="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Desarrollador de software.</h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Estoy especializado en desarrollo web y mi objetivo principal es crear productos digitales adaptados al cliente y al usuario final, poniendo mucha atención en la calidad y simplicidad tanto del diseño como de la solución técnica adoptada.</p>
-            <a href="#" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
+            <Socials className='mb-4' />
+            <a href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
               Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
             </a>
             <a href="/about-me" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
@@ -24,111 +27,119 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* OLD HERO SECTION <section className="text-gray-600 bg-softblue font-mono">
-        <header className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h2 className="sm:text-4xl text-3xl mb-4 font-bold text-darkblue">JAIME <span className='text-orange'>FM</span></h2>
-            <h1 className="text-1xl mb-4 font-bold text-gray-600">TECNOLOGÍA · ELECTRÓNICA · PROGRAMACIÓN</h1>
-            <p className="mb-8 leading-relaxed">Desarrollador de software especializado en desarrollo web.<br /> Me encanta aprender, investigar y comunicar sobre tecnología y programación.</p>
-            <div className="flex justify-center">
-              <button className="inline-flex text-white bg-darkblue border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Contacto</button>
-              <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Más sobre mí</button>
-            </div>
-          </div>
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img className="object-cover object-center rounded" alt="Jaime FM" src="/jaime-byn.jpeg" />
-          </div>
-        </header>
-      </section> */}
 
-      {/* <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-12 mx-auto">
-          <h2 className="max-w-2xl mb-4 font-bold text-2xl md:text-3xl xl:text-4xl dark:text-white">Tecnologías que utilizo.</h2>
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className='flex items-center'>
-              <FaJs className='size-8 text-yellow-300' />
-              <h1 class="ml-2 text-xl font-semibold text-gray-800 dark:text-white">JavaScript</h1>
-              <p class="mt-2 text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim fusce tortor, ac sed malesuada blandit. Et mi gravida sem feugiat.</p>
-            </div>
-            <div>
-              <FaHtml5 className='size-8 text-orange' />
-              <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">HTML</h1>
-            </div>
-            <div>
-              <FaCss3 className='size-8 text-blue-600' />
-              <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">CSS</h1>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-
+      <hr className="my-12 border-gray-200 dark:border-gray-700" />
 
       {/* Mi trabajo */}
-
-      <section class="bg-white dark:bg-gray-900">
-        {/* <div class="gap-16 item-center pt-2 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:pt-4 lg:px-3"></div>s */}
-        <div className="container px-12 py-12 mx-auto">
-          <h2 class="text-4xl font-extrabold text-darkblue dark:text-white">Mi trabajo</h2>
+      <section className="bg-white dark:bg-gray-900">
+        <div className="container px-6 py-10 mx-auto">
+          <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Mi trabajo</h2>
+          <div className="mt-2">
+            <span className="inline-block w-40 h-1 bg-softblue rounded-full"></span>
+            <span className="inline-block w-3 h-1 ml-1 bg-softblue rounded-full"></span>
+            <span className="inline-block w-1 h-1 ml-1 bg-softblue rounded-full"></span>
+          </div>
           <p className="mt-3 text-gray-600">Aquí tienes una pequeña muestra de proyectos que he realizado.</p>
-
           <div className="divide-y">
-            <div class="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
-              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <h3 class="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marisol Sánchez Psicóloga</h3>
-                <p class="mb-4">Una web para una clínica de psicología construida sobre Wordpress como CMS utilizando divi como constructor.</p>
+            <div className="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marisol Sánchez Psicóloga</h3>
+                <p className="mb-4">Una web para una clínica de psicología construida sobre Wordpress como CMS utilizando divi como constructor.</p>
                 <p>Cuenta con formulario de contacto, blog, páginas informativas y un formulario para suscribirse a newsletter.</p>
               </div>
-              <div class="grid grid-cols-3 gap-4 mt-8">
-                <img class="w-full rounded-lg col-span-2" src="/marisol-psicologa.png" alt="web Marisol Psicóloga" />
-                <img class="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" />
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <img className="w-full rounded-lg col-span-2" src="/marisol-psicologa.png" alt="web Marisol Psicóloga" />
+                <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" />
               </div>
             </div>
-
-            <div class="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
-              <div class="grid grid-cols-3 gap-4 mt-8">
-                <img class="w-full rounded-lg col-span-2" src="/lapicara-web.png" alt="web La Pícara" />
-                {/* <img class="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" /> */}
+            <div className="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <img className="w-full rounded-lg col-span-2" src="/lapicara-web.png" alt="web La Pícara" />
+                {/* <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" /> */}
               </div>
-
-              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <h3 class="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">La Pícara producciones</h3>
-                <p class="mb-4">Esta es otra web desarrollada con Wordpress y Divi con un diseño one page.</p>
+              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">La Pícara producciones</h3>
+                <p className="mb-4">Esta es otra web desarrollada con Wordpress y Divi con un diseño one page.</p>
                 <p>En este caso, la implementación de los estilos fue todo un reto ya que partíamos de un diseño hecho con Figma por una diseñadora.</p>
               </div>
             </div>
-
-
-            <div class="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
-              <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <h3 class="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Adventures in class</h3>
-                <p class="mb-4">Para este proyecto utilicé tecnologías similares a los anteriores proyectos. Pero además añadí un e-commerce.</p>
+            <div className="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Adventures in class</h3>
+                <p className="mb-4">Para este proyecto utilicé tecnologías similares a los anteriores proyectos. Pero además añadí un e-commerce.</p>
                 <p>Por otro lado en este proyecto tenemos también muchos estilos personalizados mediante código CSS para cumplir con un diseño más custom.</p>
               </div>
-              <div class="grid grid-cols-3 gap-4 mt-8">
-                <img class="w-full rounded-lg col-span-2" src="/adventures-in-class-web.png" alt="web Adventures in class" />
-                <img class="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/adventures-in-class-web-mobile.png" alt="web Adventures in class móvil" />
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <img className="w-full rounded-lg col-span-2" src="/adventures-in-class-web.png" alt="web Adventures in className" />
+                <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/adventures-in-class-web-mobile.png" alt="web Adventures in className móvil" />
               </div>
             </div>
-
-
           </div>
-
-
         </div>
       </section>
 
+      <hr className="my-12 border-gray-200 dark:border-gray-700" />
 
-
-
+      {/* Servicios */}
+      <section className="bg-white dark:bg-gray-900">
+        <div className="container px-6 py-12 mx-auto">
+          <div className="lg:flex lg:items-center">
+            <div className="w-full space-y-12 lg:w-1/2 lg:px-6">
+              <div>
+                <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Servicios</h2>
+                <div className="mt-2">
+                  <span className="inline-block w-40 h-1 bg-softblue rounded-full"></span>
+                  <span className="inline-block w-3 h-1 ml-1 bg-softblue rounded-full"></span>
+                  <span className="inline-block w-1 h-1 ml-1 bg-softblue rounded-full"></span>
+                </div>
+              </div>
+              <div className="md:flex md:items-start md:-mx-4">
+                <span className="inline-block p-2 text-darkblue bg-softblue rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
+                  <FaCode className='size-6' />
+                </span>
+                <div className="mt-4 md:mx-4 md:mt-0">
+                  <h3 className="text-xl font-semibold text-gray-700 dark:text-white">Desarrollo de software</h3>
+                  <p className="mt-3 text-gray-500 dark:text-gray-300">
+                    Puedo participar en proyectos desarrollando software en distintos lenguajes. Creo aplicaciones web utilizando herramientas modernas y actualizadas. Siempre aplicando <strong>buenas prácticas</strong> para conseguir un <strong>producto óptimo y de calidad</strong>. También puedo participar en las etapas iniciales de un nuevo producto aportando mi <strong>punto de vista técnico</strong> en la definición de requisitos y la toma de decisiones de negocio.
+                  </p>
+                </div>
+              </div>
+              <div className="md:flex md:items-start md:-mx-4">
+                <span className="inline-block p-2 text-darkblue bg-softblue rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
+                  <FaGlobe className='size-6' />
+                </span>
+                <div className="mt-4 md:mx-4 md:mt-0">
+                  <h3 className="text-xl font-semibold text-gray-700 dark:text-white">Creación de páginas web a medida</h3>
+                  <p className="mt-3 text-gray-500 dark:text-gray-300">
+                    Puedo convertir ideas y diseños en una web completa y funcional. Trabajo con un enfoque mobile first para asegurar que la página sea usable en cualquier dispositivo. Puedo <strong>adaptarme</strong> a las <strong>necesidades del negocio</strong> para añadir las funcionalidades necesarias (CMS, newsletter, formulario de contacto, <strong>e-commerce</strong>, etc.)
+                  </p>
+                </div>
+              </div>
+              <div className="md:flex md:items-start md:-mx-4">
+                <span className="inline-block p-2 text-darkblue bg-softblue rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
+                  <FaHandshake className='size-6' />
+                </span>
+                <div className="mt-4 md:mx-4 md:mt-0">
+                  <h3 className="text-xl font-semibold text-gray-700 dark:text-white">Consultoría técnica</h3>
+                  <p className="mt-3 text-gray-500 dark:text-gray-300">
+                    Si necesitas <strong>ayuda</strong> o <strong>asesoramiento</strong> con tu proyecto o incluso <strong>formación</strong> sobre conceptos técnicos o <strong>programación</strong> podemos agendar una videollamada donde resolveré encantado todas tus dudas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="hidden lg:flex lg:items-center lg:w-1/2 lg:justify-center px-6">
+              <img className="size-[40rem] object-cover rounded-xl" src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contacto */}
-      <section className="bg-softblue">
-        <div className="container px-12 py-12 mx-auto">
+      <section id='contacto' className="bg-softblue">
+        <div className="container px-6 py-12 mx-auto">
           <div>
-            {/* <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p> */}
-            <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Contacta conmigo</h2>
-            <p className="mt-3 text-gray-600">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los servicios que puedo ofrecer.</p>
+            <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Contacto</h2>
+            <p className="mt-3 text-gray-600">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los <strong>servicios</strong> que puedo ofrecer.</p>
           </div>
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
             <Link className='hover:scale-105 transition-transform' href={'mailto:jaimefrm93@gmail.com'}>
