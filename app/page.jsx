@@ -3,18 +3,18 @@ import Link from 'next/link';
 import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone, FaTwitter, FaYoutube, FaGithub, FaCss3, FaCode, FaGlobe, FaHandshake } from 'react-icons/fa';
 import Projects from '@/components/Projects';
 import Socials from '@/components/Socials';
+import Underline from '@/components/Underline';
 
 export default function Home() {
   return (
     <main className="min-h-full">
       {/* Hero section */}
       <section className="dark:bg-gray-900">
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-          <div className="mr-auto place-self-center lg:col-span-7">
+        <div className="container grid px-6 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 md:grid-cols-12">
+          <div className="mr-auto place-self-center md:col-span-7">
             <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">¡Hola! 👋🏻 Soy Jaime FM.</h2>
             <h1 className="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Desarrollador de software.</h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Estoy especializado en desarrollo web y mi objetivo principal es crear productos digitales adaptados al cliente y al usuario final, poniendo mucha atención en la calidad y simplicidad tanto del diseño como de la solución técnica adoptada.</p>
-            <Socials className='mb-4' />
             <a href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
               Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
             </a>
@@ -22,26 +22,27 @@ export default function Home() {
               Conóceme&nbsp;<span className='hidden lg:inline'>un poco mejor</span>
             </a>
           </div>
-          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img className='rounded-md' src="/jaime-byn.jpeg" alt="Jaime Fernández Moreno" />
+          <div className="hidden lg:mt-0 md:col-span-5 md:flex">
+            <img className='rounded-md object-cover' src="/jaime-byn.jpeg" alt="Jaime Fernández Moreno" />
           </div>
+        </div>
+        <div className='container mx-auto flex justify-center'>
+          <span className='px-4 py-4 mb-4'>
+            <Socials />
+          </span>
         </div>
       </section>
 
-      <hr className="my-12 border-gray-200 dark:border-gray-700" />
+      {/* <hr className="my-12 border-gray-200 dark:border-gray-700" /> */}
 
       {/* Mi trabajo */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-softblue dark:bg-gray-900">
         <div className="container px-6 py-10 mx-auto">
-          <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Mi trabajo</h2>
-          <div className="mt-2">
-            <span className="inline-block w-40 h-1 bg-softblue rounded-full"></span>
-            <span className="inline-block w-3 h-1 ml-1 bg-softblue rounded-full"></span>
-            <span className="inline-block w-1 h-1 ml-1 bg-softblue rounded-full"></span>
-          </div>
+          <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">MI TRABAJO</h2>
+          <Underline />
           <p className="mt-3 text-gray-600">Aquí tienes una pequeña muestra de proyectos que he realizado.</p>
           <div className="divide-y">
-            <div className="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+            <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
               <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marisol Sánchez Psicóloga</h3>
                 <p className="mb-4">Una web para una clínica de psicología construida sobre Wordpress como CMS utilizando divi como constructor.</p>
@@ -52,7 +53,7 @@ export default function Home() {
                 <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" />
               </div>
             </div>
-            <div className="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+            <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <img className="w-full rounded-lg col-span-2" src="/lapicara-web.png" alt="web La Pícara" />
                 {/* <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" /> */}
@@ -63,7 +64,7 @@ export default function Home() {
                 <p>En este caso, la implementación de los estilos fue todo un reto ya que partíamos de un diseño hecho con Figma por una diseñadora.</p>
               </div>
             </div>
-            <div className="gap-16 items-center py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
+            <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
               <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Adventures in class</h3>
                 <p className="mb-4">Para este proyecto utilicé tecnologías similares a los anteriores proyectos. Pero además añadí un e-commerce.</p>
@@ -78,7 +79,7 @@ export default function Home() {
         </div>
       </section>
 
-      <hr className="my-12 border-gray-200 dark:border-gray-700" />
+      {/* <hr className="my-12 border-gray-200 dark:border-gray-700" /> */}
 
       {/* Servicios */}
       <section className="bg-white dark:bg-gray-900">
@@ -86,12 +87,8 @@ export default function Home() {
           <div className="lg:flex lg:items-center">
             <div className="w-full space-y-12 lg:w-1/2 lg:px-6">
               <div>
-                <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Servicios</h2>
-                <div className="mt-2">
-                  <span className="inline-block w-40 h-1 bg-softblue rounded-full"></span>
-                  <span className="inline-block w-3 h-1 ml-1 bg-softblue rounded-full"></span>
-                  <span className="inline-block w-1 h-1 ml-1 bg-softblue rounded-full"></span>
-                </div>
+                <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">SERVICIOS</h2>
+                <Underline />
               </div>
               <div className="md:flex md:items-start md:-mx-4">
                 <span className="inline-block p-2 text-darkblue bg-softblue rounded-xl md:mx-4 dark:text-white dark:bg-blue-500">
@@ -138,7 +135,8 @@ export default function Home() {
       <section id='contacto' className="bg-softblue">
         <div className="container px-6 py-12 mx-auto">
           <div>
-            <h2 className="text-4xl font-extrabold text-darkblue dark:text-white">Contacto</h2>
+            <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">CONTACTO</h2>
+            <Underline />
             <p className="mt-3 text-gray-600">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los <strong>servicios</strong> que puedo ofrecer.</p>
           </div>
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
