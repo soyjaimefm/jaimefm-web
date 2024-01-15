@@ -15,10 +15,11 @@ export default function Home() {
       {/* Hero section */}
       <section className="dark:bg-gray-900">
         <div className="container grid px-6 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 md:grid-cols-12">
-          <div className="mr-auto place-self-center md:col-span-7">
-            <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">¡Hola! 👋🏻 Soy Jaime FM.</h2>
-            <h1 className="max-w-2xl mb-4 text-xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">Desarrollador de software.</h1>
-            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Estoy especializado en desarrollo web y mi objetivo principal es crear productos digitales adaptados al cliente y al usuario final, poniendo mucha atención en la calidad y simplicidad tanto del diseño como de la solución técnica adoptada.</p>
+          <div className="mr-auto place-self-center md:col-span-8">
+            <h2 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl text-darkblue dark:text-white">👋🏻 Jaime <span className='text-orange'>FM.</span></h2>
+            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold leading-none md:text-3xl xl:text-4xl text-gray-700 dark:text-white">Desarrollador de software.</h1>
+            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Actualmente desarrollador frontend en Paradigma Digital.</p>
+            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Me encanta el desarrollo web, la electrónica y la tecnología.<br />Como proyecto personal estoy creando contenido de vídeo y artículos sobre los temas que me interesan.<br />Fuera del ordenador disfruto con la buena música, el deporte y los viajes.</p>
             <a href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
               Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
             </a>
@@ -26,7 +27,7 @@ export default function Home() {
               Conóceme&nbsp;<span className='hidden lg:inline'>un poco mejor</span>
             </a>
           </div>
-          <div className="hidden lg:mt-0 md:col-span-5 md:flex">
+          <div className="hidden lg:mt-0 md:col-span-4 md:flex">
             <img className='rounded-md object-cover' src="/jaime-byn.jpeg" alt="Jaime Fernández Moreno" />
           </div>
         </div>
@@ -49,8 +50,8 @@ export default function Home() {
             <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
               <div className="">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marisol Sánchez Psicóloga</h3>
-                <p className="mb-4">Una web para una clínica de psicología construida sobre Wordpress como CMS utilizando divi como constructor.</p>
-                <p>Cuenta con formulario de contacto, blog, páginas informativas y un formulario para suscribirse a newsletter.</p>
+                <p className="mb-4">Clínica de Psicología ubicada en Hellín (Albacete). La web está construida sobre <strong>Wordpress</strong> utilizando <strong>Divi</strong> como constructor.</p>
+                <p>Cuenta con blog, material descargable, páginas informativas y formularios de contacto y suscripción.</p>
               </div>
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <img className="w-full rounded-lg col-span-2" src="/marisol-psicologa.png" alt="web Marisol Psicóloga" />
@@ -64,8 +65,8 @@ export default function Home() {
               </div>
               <div className="font-light sm:text-lg dark:text-gray-400">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">La Pícara producciones</h3>
-                <p className="mb-4">Esta es otra web desarrollada con Wordpress y Divi con un diseño one page.</p>
-                <p>En este caso, la implementación de los estilos fue todo un reto ya que partíamos de un diseño hecho con Figma por una diseñadora.</p>
+                <p className="mb-4">Productora audiovisual.</p>
+                <p>En este caso partía de un diseño en figma. Fue todo un reto a nivel de <strong>CSS</strong> replicar toda esa estética y además poder un Wordpress para gestionar el contenido.</p>
               </div>
             </div>
             <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
@@ -111,6 +112,7 @@ export default function Home() {
               <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandCpp className='size-6' />C/C++</span>
               <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaPython className='size-6' />Python</span>
             </div>
+            <p className='mt-8 text-center'>Lo más importante es encontrar la adecuada a cada proyecto.</p>
             
           </div>
 
