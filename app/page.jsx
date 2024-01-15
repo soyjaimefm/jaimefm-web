@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone, FaTwitter, FaYoutube, FaGithub, FaCss3, FaCode, FaGlobe, FaHandshake } from 'react-icons/fa';
+import { FaReact, FaJs, FaHtml5, FaRegEnvelope, FaInstagram, FaPhone, FaTwitter, FaYoutube, FaGithub, FaCss3, FaCode, FaGlobe, FaHandshake, FaNpm, FaGit, FaNodeJs, FaPython } from 'react-icons/fa';
+import { SiTailwindcss, SiVite } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandCpp } from "react-icons/tb";
+
 import Projects from '@/components/Projects';
 import Socials from '@/components/Socials';
 import Underline from '@/components/Underline';
@@ -13,7 +17,7 @@ export default function Home() {
         <div className="container grid px-6 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 md:grid-cols-12">
           <div className="mr-auto place-self-center md:col-span-7">
             <h2 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">¡Hola! 👋🏻 Soy Jaime FM.</h2>
-            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Desarrollador de software.</h1>
+            <h1 className="max-w-2xl mb-4 text-xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white">Desarrollador de software.</h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Estoy especializado en desarrollo web y mi objetivo principal es crear productos digitales adaptados al cliente y al usuario final, poniendo mucha atención en la calidad y simplicidad tanto del diseño como de la solución técnica adoptada.</p>
             <a href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
               Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
@@ -28,7 +32,7 @@ export default function Home() {
         </div>
         <div className='container mx-auto flex justify-center'>
           <span className='px-4 py-4 mb-4'>
-            <Socials />
+            <Socials className='text-darkblue' />
           </span>
         </div>
       </section>
@@ -36,14 +40,14 @@ export default function Home() {
       {/* <hr className="my-12 border-gray-200 dark:border-gray-700" /> */}
 
       {/* Mi trabajo */}
-      <section className="bg-softblue dark:bg-gray-900">
+      <section className="bg-softblue dark:bg-gray-900 text-gray-600 font-light sm:text-lg dark:text-gray-400">
         <div className="container px-6 py-10 mx-auto">
           <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">MI TRABAJO</h2>
           <Underline />
-          <p className="mt-3 text-gray-600">Aquí tienes una pequeña muestra de proyectos que he realizado.</p>
+          <p className="mt-3">Aquí tienes una pequeña muestra de proyectos que he realizado.</p>
           <div className="divide-y">
             <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
-              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+              <div className="">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Marisol Sánchez Psicóloga</h3>
                 <p className="mb-4">Una web para una clínica de psicología construida sobre Wordpress como CMS utilizando divi como constructor.</p>
                 <p>Cuenta con formulario de contacto, blog, páginas informativas y un formulario para suscribirse a newsletter.</p>
@@ -58,14 +62,14 @@ export default function Home() {
                 <img className="w-full rounded-lg col-span-2" src="/lapicara-web.png" alt="web La Pícara" />
                 {/* <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" /> */}
               </div>
-              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+              <div className="font-light sm:text-lg dark:text-gray-400">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">La Pícara producciones</h3>
                 <p className="mb-4">Esta es otra web desarrollada con Wordpress y Divi con un diseño one page.</p>
                 <p>En este caso, la implementación de los estilos fue todo un reto ya que partíamos de un diseño hecho con Figma por una diseñadora.</p>
               </div>
             </div>
             <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
-              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+              <div className="font-light sm:text-lg dark:text-gray-400">
                 <h3 className="my-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Adventures in class</h3>
                 <p className="mb-4">Para este proyecto utilicé tecnologías similares a los anteriores proyectos. Pero además añadí un e-commerce.</p>
                 <p>Por otro lado en este proyecto tenemos también muchos estilos personalizados mediante código CSS para cumplir con un diseño más custom.</p>
@@ -76,16 +80,50 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <hr className="my-12 border-gray-200 dark:border-gray-700" />
+
+          <div>
+            <p className='font-semibold text-center'>Estas son las tecnologías con las que suelo trabajar:</p>
+            <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
+              <p>Frontend: </p>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaJs className='size-6' />JavaScript</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaHtml5 className='size-6' />HTML</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaCss3 className='size-6' />CSS</span>
+              
+            </div>
+            <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
+              <p>Frameworks: </p>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaReact className='size-6' />React</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandNextjs className='size-6' />Next.js</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><SiTailwindcss className='size-6' />Tailwind CSS</span>
+            </div>
+
+            <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
+              <p>Tools: </p>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><SiVite className='size-6' />Vite</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaNpm className='size-6' />npm</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaGit className='size-6' />git</span>
+            </div>
+            <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
+              <p>Backend y lenguajes: </p>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaNodeJs className='size-6' />Node.js</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandCpp className='size-6' />C/C++</span>
+              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaPython className='size-6' />Python</span>
+            </div>
+            
+          </div>
+
         </div>
       </section>
 
-      {/* <hr className="my-12 border-gray-200 dark:border-gray-700" /> */}
+
 
       {/* Servicios */}
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900 text-gray-600 font-light sm:text-lg dark:text-gray-400">
         <div className="container px-6 py-12 mx-auto">
           <div className="lg:flex lg:items-center">
-            <div className="w-full space-y-12 lg:w-1/2 lg:px-6">
+            <div className="w-full space-y-12 lg:w-1/2 lg:pr-6 font-light">
               <div>
                 <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">SERVICIOS</h2>
                 <Underline />

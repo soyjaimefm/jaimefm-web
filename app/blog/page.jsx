@@ -1,40 +1,45 @@
+import Underline from "@/components/Underline";
 import { getAllFilesMetadata } from "@/lib/mdx";
 import Link from "next/link";
 
 export default function blogPage() {
   const postsData = getAllFilesMetadata();
   return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl font-bold underline">Página blog</h1>
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
-            {
-              postsData.map(post => (
-                <div key={post.slug} className="p-4 lg:w-1/3">
-                  <div className="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
-                    <p>{post.date}</p>
-                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                    <h1 className="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">{post.title}</h1>
-                    <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                    <Link href={post.slug} className="text-indigo-500 inline-flex items-center">Learn Moreeeee
-                      SVG SPACE
-                    </Link>
-                    <div className="text-center mt-2 leading-none flex justify-center absolute bottom-0 left-0 w-full py-4">
-                      <span className="text-gray-400 mr-3 inline-flex items-center leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                        SVG SPACE 1.2K
-                      </span>
-                      <span className="text-gray-400 inline-flex items-center leading-none text-sm">
-                        SVG SPACE6
-                      </span>
-                    </div>
-                  </div>
+
+
+
+    <section className="">
+      <div className="container px-6 py-10 mx-auto">
+        <h1 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">BLOG</h1>
+        <Underline />
+        <div className="mx-auto mt-10 grid grid-cols-1 lg:grid-cols-3 lg:max-w-none lg:mx-0 md:grid-cols-2 gap-x-8 gap-y-16">
+          {
+            postsData.map(post => (
+              <article key={post.slug} className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex items-start justify-between flex-col w-full">
+                <a href={'/blog/' + post.slug}>
+                  <img className="rounded-t-lg object-cover h-auto w-full aspect-video" src={post.heroImage} alt="" />
+                </a>
+                <div className="p-5">
+                  <a href="#">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>
+                  </a>
+                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{post.description}</p>
+                  <a href={'/blog/' + post.slug} className="inline-flex items-center justify-center px-4 py-2 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
+                    Leer más
+                  </a>
                 </div>
-              ))
-            }
-          </div>
+              </article>
+            ))
+          }
         </div>
-      </section>
-    </div>
+
+
+      </div>
+    </section>
+
+
+
+
+
   )
 }
