@@ -17,9 +17,9 @@ export default function Home() {
         <div className="container grid px-6 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 md:grid-cols-12">
           <div className="mr-auto place-self-center md:col-span-8">
             <h2 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl text-darkblue dark:text-white">👋🏻 Jaime <span className='text-orange'>FM.</span></h2>
-            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold leading-none md:text-3xl xl:text-4xl text-gray-700 dark:text-white">Desarrollador de software.</h1>
-            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Actualmente desarrollador frontend en Paradigma Digital.</p>
-            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Me encanta el desarrollo web, la electrónica y la tecnología.<br />Como proyecto personal estoy creando contenido de vídeo y artículos sobre los temas que me interesan.<br />Fuera del ordenador disfruto con la buena música, el deporte y los viajes.</p>
+            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold leading-none md:text-3xl xl:text-4xl text-darkblue opacity-85 dark:text-white">Desarrollador de software.</h1>
+            <p className="max-w-2xl mb-4 font-light text-gray-600 md:text-lg lg:text-xl dark:text-gray-300">Trabajo como desarrollador Frontend en Paradigma Digital.</p>
+            <p className="max-w-2xl mb-6 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">Me encanta la programación, especialmente el desarrollo web, la electrónica y la tecnología. Por eso disfruto investigando, aprendiendo y creando contenido para redes sociales.</p>
             <a href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
               Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
             </a>
@@ -41,7 +41,7 @@ export default function Home() {
       {/* <hr className="my-12 border-gray-200 dark:border-gray-700" /> */}
 
       {/* Mi trabajo */}
-      <section className="bg-softblue dark:bg-gray-900 text-gray-600 font-light sm:text-lg dark:text-gray-400">
+      <section className="bg-softblue dark:bg-gray-900 text-gray-600 font-normal sm:text-lg dark:text-gray-400">
         <div className="container px-6 py-10 mx-auto">
           <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">MI TRABAJO</h2>
           <Underline />
@@ -88,29 +88,29 @@ export default function Home() {
             <p className='font-semibold text-center'>Estas son las tecnologías con las que suelo trabajar:</p>
             <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
               <p>Frontend: </p>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaJs className='size-6' />JavaScript</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaHtml5 className='size-6' />HTML</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaCss3 className='size-6' />CSS</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaJs className='size-6' />JavaScript</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaHtml5 className='size-6' />HTML</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaCss3 className='size-6' />CSS</span>
               
             </div>
             <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
               <p>Frameworks: </p>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaReact className='size-6' />React</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandNextjs className='size-6' />Next.js</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><SiTailwindcss className='size-6' />Tailwind CSS</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaReact className='size-6' />React</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandNextjs className='size-6' />Next.js</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><SiTailwindcss className='size-6' />Tailwind CSS</span>
             </div>
 
             <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
               <p>Tools: </p>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><SiVite className='size-6' />Vite</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaNpm className='size-6' />npm</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaGit className='size-6' />git</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><SiVite className='size-6' />Vite</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaNpm className='size-6' />npm</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaGit className='size-6' />git</span>
             </div>
             <div className='mt-8 flex flex-wrap justify-center items-center gap-4'>
               <p>Backend y lenguajes: </p>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaNodeJs className='size-6' />Node.js</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandCpp className='size-6' />C/C++</span>
-              <span class="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaPython className='size-6' />Python</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaNodeJs className='size-6' />Node.js</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><TbBrandCpp className='size-6' />C/C++</span>
+              <span className="bg-gray-100 text-gray-700 text-sm font-medium me-2 px-2.5 py-0.5 rounded flex items-center gap-2"><FaPython className='size-6' />Python</span>
             </div>
             <p className='mt-8 text-center'>Lo más importante es encontrar la adecuada a cada proyecto.</p>
             
@@ -122,10 +122,10 @@ export default function Home() {
 
 
       {/* Servicios */}
-      <section className="bg-white dark:bg-gray-900 text-gray-600 font-light sm:text-lg dark:text-gray-400">
+      <section className="bg-white dark:bg-gray-900 text-gray-600 font-normal sm:text-lg dark:text-gray-400">
         <div className="container px-6 py-12 mx-auto">
           <div className="lg:flex lg:items-center">
-            <div className="w-full space-y-12 lg:w-1/2 lg:pr-6 font-light">
+            <div className="w-full space-y-12 lg:w-1/2 lg:pr-6">
               <div>
                 <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">SERVICIOS</h2>
                 <Underline />
@@ -172,12 +172,12 @@ export default function Home() {
       </section>
 
       {/* Contacto */}
-      <section id='contacto' className="bg-softblue">
+      <section id='contacto' className="bg-softblue font-normal">
         <div className="container px-6 py-12 mx-auto">
           <div>
             <h2 className="text-4xl font-mono font-extrabold text-darkblue dark:text-white">CONTACTO</h2>
             <Underline />
-            <p className="mt-3 text-gray-600">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los <strong>servicios</strong> que puedo ofrecer.</p>
+            <p className="mt-3 text-gray-500">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los <strong>servicios</strong> que puedo ofrecer.</p>
           </div>
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
             <Link className='hover:scale-105 transition-transform' href={'mailto:jaimefrm93@gmail.com'}>
