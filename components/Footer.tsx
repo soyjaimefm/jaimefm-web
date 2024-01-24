@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import headerNavLinks from "@/data/headerNavLinks";
-import { FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import Socials from './Socials';
 import Link from 'next/link';
 
