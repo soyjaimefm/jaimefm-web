@@ -17,7 +17,7 @@ export default function Home() {
         <div className="container grid px-6 py-10 mx-auto lg:gap-8 xl:gap-0 lg:py-16 md:grid-cols-12">
           <div className="mr-auto place-self-center md:col-span-8">
             <h2 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl text-darkblue dark:text-white">👋🏻 Jaime <span className='text-orange'>FM.</span></h2>
-            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold leading-none md:text-3xl xl:text-4xl text-darkblue opacity-85 dark:text-white">Desarrollador de software.</h1>
+            <h1 className="max-w-2xl mb-4 text-2xl font-extrabold leading-none md:text-3xl xl:text-4xl text-darkblue dark:text-white">Desarrollador de software.</h1>
             <p className="max-w-2xl mb-4 text-gray-600 dark:text-gray-300">Trabajo como <strong>desarrollador Frontend</strong> en Paradigma Digital.</p>
             <p className="max-w-2xl mb-6 text-gray-600 lg:mb-8 dark:text-gray-300">Me encanta la programación, especialmente el <strong>desarrollo web</strong>, la electrónica y la tecnología. Por eso disfruto investigando, aprendiendo y creando contenido para redes sociales.</p>
             <a href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-gray-100 rounded-md bg-darkblue hover:opacity-70">
