@@ -17,8 +17,8 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <>
-      {(theme == "light") ? <FaMoon  onClick={() => setTheme('dark')} /> : <FaSun onClick={() => setTheme('light')} />}
-    </>
+    <div className="w-12">
+      {(theme == "light") ? <FaMoon className="size-6" onClick={() => setTheme('dark')} /> : <FaSun className="size-6" onClick={() => setTheme('light')} />}
+    </div>
   )
 }
