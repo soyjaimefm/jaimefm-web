@@ -1,6 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import Timeline from "@/components/Timeline";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutMe() {
   return (
@@ -12,7 +13,7 @@ export default function AboutMe() {
             <div className="md:w-1/3">
               <Image alt="Jaime Fernández Moreno" className="rounded-md" width={600} height={800} src={'/jaimefm-3.jpeg'}></Image>
             </div>
-            <div className="md:w-2/3">
+            <div className="mt-8 md:mt-0 md:w-2/3">
               <p className="mb-4">
                 Inicié mi experiencia laboral a finales de 2016 en Cojali systems, una empresa de desarrollo de sistemas y accesorios para vehículos industriales. Casi por casualidad me adentré en el mundo de la programación de microcontroladores en lenguaje C.
               </p>
@@ -22,9 +23,14 @@ export default function AboutMe() {
               <p className="mb-4">
                 Con unos conocimientos sobre programación web mucho más sólidos comencé a trabajar en Paradigma Digital. Dentro de un proyecto para una importante empresa de telecomunicaciones realizando tareas de mantenimiento, mejora y desarrollo de nuevas funcionalidades tanto para su web como para su aplicación móvil. En este punto he empezado a trabajar con React.js. A día de hoy continuo formándome y mejorando en materia de testing, buenas prácticas, configuración de entornos de desarrollo, integración continua, etc.
               </p>
+              <div className="text-center mt-8">
+                <Link target="_blank" href="/Jaime Fernández Moreno.pdf" className="inline-flex items-center justify-center px-5 py-3 font-medium text-center text-gray-100 rounded-md bg-hot-cinnamon-500 hover:opacity-70">
+                  Descargar CV
+                </Link>
+              </div>
             </div>
           </div>
-          <Timeline />
+          <Timeline />  
         </div>
       </section>
     </main>

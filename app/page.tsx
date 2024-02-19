@@ -19,7 +19,7 @@ export default function Home() {
             <h1 className="max-w-2xl mb-4 text-2xl font-title font-bold md:text-3xl xl:text-4xl text-gray-700 dark:text-white text-center">DESARROLLADOR DE SOFTWARE.</h1>
             <p className="max-w-2xl mb-4 text-gray-600 dark:text-gray-300">Trabajo como <strong>desarrollador Frontend</strong> en Paradigma Digital.</p>
             <p className="max-w-2xl mb-6 text-gray-600 lg:mb-8 dark:text-gray-300">Me encanta la programación, especialmente el <strong>desarrollo web</strong>, la electrónica y la tecnología. Por eso disfruto investigando, aprendiendo y creando contenido para redes sociales.</p>
-            <Link href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 font-medium text-center text-gray-100 rounded-md bg-hot-cinnamon-400 hover:opacity-70">
+            <Link href="#contacto" className="inline-flex items-center justify-center px-5 py-3 mr-3 font-medium text-center text-gray-100 rounded-md bg-hot-cinnamon-500 hover:opacity-70">
               Contacta&nbsp;<span className='hidden md:inline'> conmigo</span>
             </Link>
             <Link href="/about-me" className="inline-flex items-center justify-center px-5 py-3 font-medium text-center text-gray-100 rounded-md bg-blue-bayoux-700 hover:opacity-70">

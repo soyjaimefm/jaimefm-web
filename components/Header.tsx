@@ -14,7 +14,7 @@ export default function Header() {
     <header className='flex justify-center items-center py-5 w-full sticky top-0 bg-blue-bayoux-500 text-gray-50 min-h-16'>
       <nav className="fixed w-full z-1 top-0 start-0">
         <div className="container flex flex-wrap items-center justify-between mx-auto p-2">
-          <Link className="font-semibold text-hot-cinnamon-400 text-2xl w-12" href='/'>JFM.</Link>
+          <Link className="font-semibold text-hot-cinnamon-500 text-2xl w-12" href='/'>JFM.</Link>
           <div className="flex items-center md:order-2 space-x-3 md:space-x-0">
             <ThemeSwitcher />
             <button type="button" className="flex items-center p-2 w-10 h-10 justify-center rounded-lg md:hidden" onClick={() => { setOpenMenu((currentState) => !currentState) }}>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.className} ${exo2.variable} ${bebasNeue.variable} bg-blue-bayoux-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300`}>
+      <body className={`${inter.className} ${exo2.variable} ${bebasNeue.variable} bg-blue-bayoux-50 dark:bg-slate-800 text-gray-600 dark:text-gray-300`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <Header />
           {children}
