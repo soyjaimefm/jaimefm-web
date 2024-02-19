@@ -17,7 +17,7 @@ export default function ThemeSwitcher() {
   }
 
   return (
-    <div className="w-12">
+    <div className="w-12 cursor-pointer">
       {(theme == "light") ? <FaMoon className="size-6" onClick={() => setTheme('dark')} /> : <FaSun className="size-6" onClick={() => setTheme('light')} />}
     </div>
   )

@@ -1,0 +1,235 @@
+---
+title: 'Testing en React con Vitest'
+description: 'En este artículo hablaremos de cómo crear test unitarios con Vitest, un framework de test unitarios que funciona de manera natural con Vite.'
+date: '2024-02-16'
+heroImage: '/testing-image.jpg'
+categories: ['desarrollo web']
+tags: ['React', 'Vite', 'JavaScript']
+author: 'Jaime Fernández Moreno'
+published: true
+---
+
+# Testing en React con Vitest
+
+En este artículo hablaremos de cómo **crear test unitarios con Vitest**, un framework de test unitarios que funciona de manera natural con Vite. Los **archivos de configuración son comunes** y además, está diseñado teniendo en cuenta el **rendimiento y la compatibilidad** con otras herramientas (para facilitar la adaptación de test unitarios desarrollados con otros frameworks).
+
+Si te interesa saber como **iniciar un proyecto en React con Vite** y algunas configuraciones útiles puedes leer [este artículo](/blog/Como-crear-una-aplicacion-React-con-vite).
+
+# **Elección del framework de test para nuestra aplicación React creada con Vite**
+
+Tras investigar en Github y diversos blogs especializados en desarrollo vemos que los dos **principales frameworks de unit test** que se utilizan en aplicaciones React son **Jest y Vitest**.
+
+## Vitest vs Jest
+
+Podemos ver que Jest tiene 42.1k estrellas en Github mientras que Vitest cuenta con 9.3k. Estos números no son de extrañar ya que Jest existe desde hace mucho más tiempo.
+
+![Untitled](Testing%20en%20React%20con%20Vitest%200576e9ab3dd5414c9f5cd96863a5a2c9/Untitled.png)
+
+![Untitled](Testing%20en%20React%20con%20Vitest%200576e9ab3dd5414c9f5cd96863a5a2c9/Untitled%201.png)
+
+Pero si vemos algunas comparativas de rendimiento ([https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl](https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl)) podemos comprobar que Vitest es un poco más rápido en la ejecución inicial de los test pero muchísimo más rápido en el **modo watch**. Y es que, Vitest, una vez ejecutado, se queda esperando a que haya cambios en los test o en el desarrollo y **relanza** únicamente los **tests correspondientes a las partes del proyecto que vamos modificando**. Esto permite que podamos ser mucho más rápidos ejecutando y creando nuevos tests y que podamos dar a nuestro desarrollo un enfoque **TDD** (Test Driven Development).
+
+Para confirmar que Vitest es la elección correcta investigamos un poco más sobre la **compatibilidad de Vite con Jest** y descubrimos que, si has creado tu app utilizando Vite, Jest puede dar muchos problemas, ya que **no está pensado al 100% para usarse con Vite**. ([https://stackoverflow.com/questions/71367514/vite-jest-react-testing](https://stackoverflow.com/questions/71367514/vite-jest-react-testing))
+
+# Nuestro primer test con Vitest
+
+Una vez elegido **Vitest** como **entorno de test unitarios** para nuestra **app creada con Vite** nos disponemos a realizar el primer test.
+
+Para este primer test, vamos a adoptar un enfoque **TDD** en el que primero definiremos el test y posteriormente realizaremos el desarrollo que cumple dicho test.
+
+El primer paso es instalar vitest como dependencia de desarrollo: `npm install -D vitest`
+
+Además, añadimos a nuestro package.json los dos **scripts** necesarios para ejecutar vitest:
+
+```json
+"scripts": {
+  "test": "vitest",
+  "coverage": "vitest run --coverage"
+}
+```
+
+- **Test**: Ejecuta el entorno de **vitest en modo watch**. De esta forma vitest permanece ejecutándose a la espera de que haya cambios en test o en desarrollo y en ese momento mostrará por consola si el test ha pasado exitosamente o no.
+- **Coverage**: Ejecuta los test obteniendo además **métricas de** **cobertura**.
+
+A partir de aquí, si ejecutamos el comando `npm run test` observaremos como da un error debido a que no existe ningún archivo de test.
+
+Vamos a crear un test muy simple para comprobar que:
+
+- Una función suma es una función
+- La función suma correctamente dos números
+
+```jsx
+import { describe, expect, it } from "vitest";
+
+describe('Función Suma', () => {
+    it('Suma debe ser una función', () => {
+        expect(typeof suma).toBe('function');
+    });
+
+    it('Suma debe sumar correctamente dos números positivos', () => {
+        expect(suma(3,4)).toBe(7);
+    });
+});
+```
+
+En este punto, si ejecutamos `npm run test` los dos test darán error indicando que la función suma no está definida.
+
+Creamos un fichero calculator.js donde definiremos la función suma:
+
+```jsx
+export const suma = (a,b) => {
+    return a + b;
+}
+```
+
+Y añadimos una linea importando esta función en nuestro fichero de test:
+
+```jsx
+import { suma } from "../src/calculator";
+```
+
+A partir de aquí los dos test devuelven un estado ‘passed’ en verde. Si modificamos el resultado esperado del test y cambiamos el 7 por cualquier otro número (5 por ejemplo) el test volverá a dar error indicando expected: 5, received: 7.
+
+# Test de componentes React con Vitest
+
+Hasta ahora lo único que hemos hecho es crear test para una función muy simple, pero ¿qué pasa si tenemos que hacer **test para componentes de React**?
+
+Para empezar, necesitaremos nuevas dependencias.
+
+- Por un lado, instalamos **react testing library**. Una biblioteca que permite testear componentes React proporcionando funciones para renderizarlos y buscar elementos por texto dentro del componente: `npm install -D @testing-library/react`.
+- Instalamos también **happy dom**, un entorno que emula las funciones propias del navegador, hace que nuestro test, a pesar de ejecutarse en nodejs, tenga disponibles las funciones y métodos propios del entorno web: `npm install -D happy-dom`.
+
+Añadimos configuración para los test en el vite.config.js:
+
+```jsx
+test : {
+  environment: 'happy-dom'
+}
+```
+
+Vamos a añadir unos test simples para un componente “card”. El componente que vamos a probar es el siguiente:
+
+```jsx
+import { useState } from "react";
+
+const Card = () => {
+    const [count, setCount] = useState(0);
+    return (
+        <div style={{border: 'solid 2px', maxWidth: '500px'}}>
+            <h1>Título card</h1>
+            <p>Count: <span role="count-indicator">{count}</span></p>
+            <button onClick={() => {setCount((count) => count + 1)}}>Increment</button>
+        </div>
+    );
+}
+
+export default Card;
+```
+
+Como podemos comprobar, nuestro componente renderiza un título y un contador, además de un botón que incrementa dicho contador al pulsarlo. Los test que van a comprobar el funcionamiento de este componente son los siguientes:
+
+```jsx
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, describe, it, expect } from "vitest";
+import Card from "../src/Card";
+
+describe('Card test:',() => {
+    afterEach(cleanup);
+
+    it('should render component', () => {
+        render(<Card />);
+    });
+
+    it('should render title', () => {
+        render(<Card />);
+        screen.getByText('Título card');
+    });
+
+    it('should increment count when user clicks on Increment button', () => {
+        render(<Card />);
+
+        const currentCountValue = parseInt(screen.getByRole('count-indicator').innerText);
+        const incrementButton = screen.getByText('Increment');
+        fireEvent.click(incrementButton);
+        const updatedCountValue = parseInt(screen.getByRole('count-indicator').innerText);
+
+        expect(updatedCountValue).toBe(currentCountValue + 1);
+    });
+});
+```
+
+- El primer test únicamente comprueba que se renderiza correctamente nuestro componente.
+- El segundo comprueba que existe un texto con el contenido ‘Título card’.
+- El tercer test realiza las siguientes acciones:
+    1.  Obtiene el valor actual del contador (y lo pasa a formato número).
+    2. Busca el botón y realiza una pulsación sobre él (con la función fireEvent).
+    3. Obtiene el nuevo valor del contador.
+    4. Comprueba que el nuevo valor es igual al anterior +1.
+
+Hemos tenido que añadir también la instrucción afterEach(cleanup) al inicio de nuestra suite de test para que después de cada test unitario se **limpie el DOM** ya que, si no lo hiciéramos, se acumularían varios componentes Card fruto de las repetidas renderizaciones.
+
+# Mocking
+
+En ocasiones el desarrollo tendrá particularidades o elementos que no se podrán testear por ser funcionamientos específicos del navegador o de la aplicación ya desplegada en producción. Para evitar que el test nos de error en estos casos, a veces es necesario añadir mocks para ciertas funciones o variables. Vamos a contemplar el caso de “mockear” **variables globales** o la función **fetch**.
+
+## Variables globales
+
+En nuestro proyecto podemos tener **variables globales** que se definen en el .html o en ficheros de configuración que provienen de un **CMS** (por ejemplo Django CMS que utiliza templates). Tomando el ejemplo de Django templates es necesario “mockear” estas variables para que tengan un valor fijo y no esperen nada proveniente de Django ya que en el entorno de test, Django no se estará utilizando.
+
+Estas variables son utilizadas dentro de un módulo conf que podrán importar varios de nuestros componentes de React. Para que estas **variables globales estén disponibles en todo el entorno de test** optamos por **declararlas en un fichero setup.js que se ejecutará previo a los test** para colocar estas variables en el objeto global. El fichero de setup tendrá la siguiente forma:
+
+```jsx
+global.USER = 'Prueba1';
+global.example = 'Prueba Test 2';
+```
+
+Este fichero se encuentra en la ruta src/test/setup.js. Por lo tanto, es necesario añadir este setup dentro del vite.config.js en la propiedad setupFiles:
+
+```jsx
+test: {
+    environment: 'happy-dom',
+    setupFiles: ['./src/test/setup.js']
+}
+```
+
+A partir de este punto las variables “USER” o “example” serán **accesibles desde cualquier test**.
+
+## Función fetch
+
+Para “mockear” la función fetch y que no se llegue a hacer la petición **http** utilizaremos el módulo vi de vitest.
+
+Antes de lanzar los tests **sobrescribimos la función fetch** y creamos una función que devolverá los datos que nosotros introduzcamos con un status 200 y un método json() con el resultado.
+
+```jsx
+global.fetch = vi.fn();
+
+function createFetchResponse(data) {
+  return { status: 200, json: () => data };
+}
+```
+
+Para cada caso en el que se vaya a utilizar el fetch **prepararemos el mock para que devuelva el resultado deseado**.
+
+```jsx
+const dataResponse = [
+    {
+        "title": "titulo card",
+        "text": "<div>texto card</div>"
+    }
+];
+fetch.mockResolvedValue(createFetchResponse(dataResponse));
+```
+
+A partir de aquí, cuando un componente llame a fetch recibirá el contenido del objeto dataResponse que nosotros mismos hemos creado.
+
+# **Conclusión**
+
+En este artículo hemos podido comprobar como Vitest supone una opción a considerar a la hora de desarrollar nuestros test unitarios. Su facilidad de configuración y la rapidez de ejecución hacen que el desarrollo se haga mucho más cómodo (sobre todo con el modo watch). Estoy seguro de que el uso de esta herramienta crecerá en el corto y medio plazo.
+
+# Referencias
+
+[https://vitest.dev/config/#configuration](https://vitest.dev/config/#configuration)
+
+[https://vitest.dev/guide/mocking.html](https://vitest.dev/guide/mocking.html)
+
+[https://www.youtube.com/watch?v=_t9l2TwGioc](https://www.youtube.com/watch?v=_t9l2TwGioc)
