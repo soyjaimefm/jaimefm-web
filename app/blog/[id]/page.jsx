@@ -1,4 +1,4 @@
-import { getFileBySlug } from "@/lib/mdx";
+import { getFileBySlug, getAllFilesMetadata } from "@/lib/mdx";
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import MDXComponents from "@/components/MDXComponents";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -14,6 +14,12 @@ const mdxOptions = {
     rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
 }
 
+export async function generateStaticParams() {
+    const postsData = getAllFilesMetadata();
+    return postsData.map((post) => ({
+        id: post.slug,
+    }));
+}
 
 export default async function Post({ params }) {
     const { id } = params;
