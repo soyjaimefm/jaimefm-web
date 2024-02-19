@@ -1,8 +1,8 @@
 export default function Timeline() {
   return (
-    <ol className="relative border-s border-gray-400 my-8">
+    <ol className="border-s border-gray-400 my-8 px-0.5">
       <li className="mb-10 ms-4">
-        <div className="absolute w-3 h-3 bg-blue-bayoux-500 rounded-full mt-1.5 -start-1.5"></div>
+        <div className="w-3 h-3 bg-blue-bayoux-500 rounded-full mt-1.5 -ml-6 -start-1.5"></div>
         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2021 - Hoy</time>
         <h3 className="text-xl font-semibold text-blue-bayoux-700  dark:text-gray-100">Desarrollador Frontend</h3>
         <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Paradigma Digital</p>
@@ -14,7 +14,7 @@ export default function Timeline() {
         </ul>
       </li>
       <li className="mb-10 ms-4">
-        <div className="absolute w-3 h-3 bg-blue-bayoux-500 rounded-full mt-1.5 -start-1.5"></div>
+        <div className="w-3 h-3 bg-blue-bayoux-500 rounded-full mt-1.5 -ml-6 -start-1.5"></div>
         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2018 - 2021</time>
         <h3 className="text-xl font-semibold text-blue-bayoux-700 dark:text-white">Ingeniero de Software</h3>
         <p className="text-base font-normal text-gray-500 dark:text-gray-400">Airbus Helicopters</p>
@@ -26,7 +26,7 @@ export default function Timeline() {
         </ul>
       </li>
       <li className="ms-4">
-        <div className="absolute w-3 h-3 bg-blue-bayoux-500 rounded-full mt-1.5 -start-1.5"></div>
+        <div className="w-3 h-3 bg-blue-bayoux-500 rounded-full mt-1.5 -ml-6 -start-1.5"></div>
         <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2016 - 2018</time>
         <h3 className="text-xl font-semibold text-blue-bayoux-700 dark:text-white">Desarrollador de software embebido</h3>
         <p className="text-base font-normal text-gray-500 dark:text-gray-400">Cojali Systems</p>

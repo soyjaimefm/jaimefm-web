@@ -42,7 +42,7 @@ export default function Home() {
       <section className="font-normal sm:text-lg">
         <div className="container px-6 py-10 mx-auto">
           <SectionTitle>MIS PROYECTOS</SectionTitle>
-          <p className="mt-3">Durante el último año he estado trabajando en proyectos personales en mi tiempo libre. He desarrollado webs y tiendas online para algunos clientes. Por otro lado, he creado mi cuenta <strong>@soyjaimefm</strong> en la que comparto contenido sobre tecnología en redes sociales. También estoy trabajando en mi propia web personal para mostrar ejemplos de mi trabajo.</p>
+          <p className="mt-3">Durante el último año he estado trabajando en proyectos personales en mi tiempo libre. He desarrollado webs y tiendas online para algunos clientes. Por otro lado, he creado mi cuenta <strong>@soyjaimefm</strong> en la que comparto contenido sobre tecnología en redes sociales.</p>
           <div className="divide-y">
             <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
               <div className="">
