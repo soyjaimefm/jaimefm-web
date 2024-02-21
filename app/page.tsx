@@ -87,7 +87,7 @@ export default function Home() {
 
           <div>
             <p className='font-semibold text-center'>Estas son las tecnologías que suelo utilizar:</p>
-            <div className='mt-8 grid grid-cols-4 gap-y-6 gap-x-2 w-fit mx-auto'>
+            <div className='mt-8 grid md:grid-cols-4 gap-y-6 gap-x-2 w-fit mx-auto'>
               <p>Frontend: </p>
               <span className="dark:bg-gray-100 bg-blue-bayoux-200 text-gray-700 text-sm font-medium me-2 px-2.5 py-1 rounded flex items-center gap-2"><FaJs className='size-6' />JavaScript</span>
               <span className="dark:bg-gray-100 bg-blue-bayoux-200 text-gray-700 text-sm font-medium me-2 px-2.5 py-1 rounded flex items-center gap-2"><FaHtml5 className='size-6' />HTML</span>
@@ -168,28 +168,25 @@ export default function Home() {
           <SectionTitle>CONTACTO</SectionTitle>
           <p className="mt-3 ">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los <strong>servicios</strong> que puedo ofrecer.</p>
           <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
-            <Link className='hover:scale-105 transition-transform' href={'mailto:jaimefrm93@gmail.com'}>
+            <Link className='hover:scale-105 transition-transform text-center' href={'mailto:jaimefrm93@gmail.com'}>
               <span className="inline-block p-3 text-blue-bayoux-700 bg-blue-bayoux-300 rounded-full">
                 <FaRegEnvelope className='w-6 h-6'></FaRegEnvelope>
               </span>
               <h3 className="mt-4 text-lg font-medium text-blue-bayoux-700 dark:text-blue-bayoux-200">Email</h3>
-              <p className="mt-2">Estaré encantado de ayudarte.</p>
               <p className="mt-2 text-blue-bayoux-600 dark:text-blue-bayoux-300">jaimefrm93@gmail.com</p>
             </Link>
-            <Link className='hover:scale-105 transition-transform' href={'https://www.instagram.com/soyjaimefm/?hl=es'}>
+            <Link className='hover:scale-105 transition-transform text-center' href={'https://www.instagram.com/soyjaimefm/?hl=es'}>
               <span className="inline-block p-3 text-blue-bayoux-700 bg-blue-bayoux-300 rounded-full">
                 <FaInstagram className='w-6 h-6'></FaInstagram>
               </span>
               <h3 className="mt-4 text-lg font-medium text-blue-bayoux-700 dark:text-blue-bayoux-200">Redes sociales</h3>
-              <p className="mt-2">Escribe un mensaje directo.</p>
               <p className="mt-2 text-blue-bayoux-600 dark:text-blue-bayoux-300">@soyjaimefm</p>
             </Link>
-            <Link className='hover:scale-105 transition-transform' href={'tel:+34687722498'}>
+            <Link className='hover:scale-105 transition-transform text-center' href={'tel:+34687722498'}>
               <span className="inline-block p-3 text-blue-bayoux-700 bg-blue-bayoux-300 rounded-full">
                 <FaPhone className='w-6 h-6'></FaPhone>
               </span>
               <h3 className="mt-4 text-lg font-medium text-blue-bayoux-700 dark:text-blue-bayoux-200">Teléfono</h3>
-              <p className="mt-2">Puedes llamarme o escribir por Whatsapp.</p>
               <p className="mt-2 text-blue-bayoux-600 dark:text-blue-bayoux-300">+34687722498</p>
             </Link>
           </div>

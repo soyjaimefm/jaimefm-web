@@ -28,13 +28,13 @@ export default async function Post({ params }) {
 
     return (
         <>
-            <article className="prose dark:prose-invert lg:prose-xl mx-auto py-12">
+            <article className="prose dark:prose-invert lg:prose-xl mx-auto px-4 py-12">
                 <div className="overflow-hidden mb-8 rounded-lg">
                     {
                         heroImage && (
                             <figure className="w-auto h-auto md:h-[480px] object-cover">
                                 <Image
-                                    className="rounded-lg transition duration-300 ease-in-out hover:scale-110"
+                                    className="rounded-lg"
                                     src={heroImage}
                                     alt={title}
                                     width={960}

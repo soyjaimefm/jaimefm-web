@@ -16,7 +16,7 @@ export default function blogPage() {
               postsData.map(post => (
                 <article key={post.slug} className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex items-start justify-between flex-col w-full">
                   <Link href={'/blog/' + post.slug}>
-                    <Image width={400} height={200} className="rounded-t-lg object-cover aspect-video" src={post.heroImage} alt={post.title} />
+                    <Image width={640} height={430} className="rounded-t-lg object-cover aspect-video" src={post.heroImage} alt={post.title} />
                   </Link>
                   <div className="p-5">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{post.title}</h5>

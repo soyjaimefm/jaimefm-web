@@ -11,11 +11,11 @@ published: true
 
 # Testing en React con Vitest
 
-En este artículo hablaremos de cómo **crear test unitarios con Vitest**, un framework de test unitarios que funciona de manera natural con Vite. Los **archivos de configuración son comunes** y además, está diseñado teniendo en cuenta el **rendimiento y la compatibilidad** con otras herramientas (para facilitar la adaptación de test unitarios desarrollados con otros frameworks).
+En este artículo hablaremos de cómo **crear test unitarios con Vitest**, un framework de test unitarios que funciona de manera natural con Vite. Los **archivos de configuración son comunes** y además, está diseñado teniendo en cuenta el **rendimiento y la compatibilidad** con otras herramientas (para facilitar la adaptación de test unitarios desarrollados con otros frameworks como Jest).
 
 Si te interesa saber como **iniciar un proyecto en React con Vite** y algunas configuraciones útiles puedes leer [este artículo](/blog/Como-crear-una-aplicacion-React-con-vite).
 
-# **Elección del framework de test para nuestra aplicación React creada con Vite**
+# Elección del framework de test para nuestra aplicación React creada con Vite
 
 Tras investigar en Github y diversos blogs especializados en desarrollo vemos que los dos **principales frameworks de unit test** que se utilizan en aplicaciones React son **Jest y Vitest**.
 
@@ -23,19 +23,18 @@ Tras investigar en Github y diversos blogs especializados en desarrollo vemos qu
 
 Podemos ver que Jest tiene 42.1k estrellas en Github mientras que Vitest cuenta con 9.3k. Estos números no son de extrañar ya que Jest existe desde hace mucho más tiempo.
 
-![Untitled](Testing%20en%20React%20con%20Vitest%200576e9ab3dd5414c9f5cd96863a5a2c9/Untitled.png)
+<div style={{display:'flex', justifyContent: 'space-around'}}>
+    <div><img src="/Vitest.jpeg" style={{maxHeight:'225px'}} /></div>
+    <div><img src="/Jest.jpeg" /></div>
+</div>
 
-![Untitled](Testing%20en%20React%20con%20Vitest%200576e9ab3dd5414c9f5cd96863a5a2c9/Untitled%201.png)
-
-Pero si vemos algunas comparativas de rendimiento ([https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl](https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl)) podemos comprobar que Vitest es un poco más rápido en la ejecución inicial de los test pero muchísimo más rápido en el **modo watch**. Y es que, Vitest, una vez ejecutado, se queda esperando a que haya cambios en los test o en el desarrollo y **relanza** únicamente los **tests correspondientes a las partes del proyecto que vamos modificando**. Esto permite que podamos ser mucho más rápidos ejecutando y creando nuevos tests y que podamos dar a nuestro desarrollo un enfoque **TDD** (Test Driven Development).
-
-Para confirmar que Vitest es la elección correcta investigamos un poco más sobre la **compatibilidad de Vite con Jest** y descubrimos que, si has creado tu app utilizando Vite, Jest puede dar muchos problemas, ya que **no está pensado al 100% para usarse con Vite**. ([https://stackoverflow.com/questions/71367514/vite-jest-react-testing](https://stackoverflow.com/questions/71367514/vite-jest-react-testing))
+Pero si vemos algunas [comparativas de rendimiento](https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl) podemos comprobar que Vitest es un poco más rápido en la ejecución inicial de los test y muchísimo más rápido en el **modo watch**. Y es que Vitest, una vez ejecutado, se queda esperando a que haya cambios en los test o en el desarrollo y **relanza** únicamente los **tests correspondientes a las partes del proyecto que vamos modificando**. Esto permite que podamos ser mucho más rápidos ejecutando y creando nuevos tests.
 
 # Nuestro primer test con Vitest
 
 Una vez elegido **Vitest** como **entorno de test unitarios** para nuestra **app creada con Vite** nos disponemos a realizar el primer test.
 
-Para este primer test, vamos a adoptar un enfoque **TDD** en el que primero definiremos el test y posteriormente realizaremos el desarrollo que cumple dicho test.
+Para este primer test, vamos a adoptar un enfoque **TDD**, es decir, primero definiremos el test y posteriormente realizaremos el desarrollo que cumple dicho test.
 
 El primer paso es instalar vitest como dependencia de desarrollo: `npm install -D vitest`
 
