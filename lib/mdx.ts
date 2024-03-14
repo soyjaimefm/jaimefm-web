@@ -3,11 +3,26 @@ import path from 'path';
 import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 
+export type FileBySlug = {
+    content: string,
+    meta: FileBySlugMeta
+}
+
+export type FileBySlugMeta = { 
+    slug: string,
+    published?: boolean,
+    title?: string,
+    description?: string,
+    heroImage?: string,
+    tags?: string[],
+    date?: string
+}
+
 const postsPath = path.join(process.cwd(), 'posts')
 
 export const getFiles = () => fs.readdirSync(postsPath);
 
-export const getFileBySlug = async (slug: string) => {
+export const getFileBySlug = (slug: string): FileBySlug => {
     const post = getFiles().find((post) => post.replace('.mdx', '') === slug);
     if (!post) {
         notFound();
@@ -29,10 +44,10 @@ export const getFileBySlug = async (slug: string) => {
     }
 }
 
-export const getAllFilesMetadata = () => {
+export const getAllFilesMetadata = (): FileBySlugMeta[] => {
     const fileNames = getFiles();
 
-    const allPostsData = fileNames.map((fileName) => {
+    const allPostsData = fileNames.map((fileName: string): FileBySlugMeta => {
         const mdxSource = fs.readFileSync(path.join(postsPath, fileName), 'utf-8');
         const { data } = matter(mdxSource);
         return {

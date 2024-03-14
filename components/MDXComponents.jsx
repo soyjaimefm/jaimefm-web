@@ -1,5 +1,7 @@
 import { Podcast } from './Podcast';
 
-export default {
-    Podcast,
+const mdxComponents = {
+    Podcast
 }
+
+export default mdxComponents;

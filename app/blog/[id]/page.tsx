@@ -15,7 +15,8 @@ const rehypeOptions = {
     theme: 'one-dark-pro'
 }
 
-const mdxOptions = {
+const mdxOptions: any = {
+    
     remarkPlugins: [[remarkGfm]],
     rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
 }
@@ -28,10 +29,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-    { params }: Props,
-    parent: ResolvingMetadata
+    { params }: Props
 ): Promise<Metadata> {
-    // read route params
     const { id } = params;
     const { meta } = await getFileBySlug(id);
 
@@ -42,7 +41,7 @@ export async function generateMetadata(
         openGraph: {
             title: meta.title,
             description: meta.description
-        },
+        }
     }
 }
 
