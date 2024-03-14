@@ -27,7 +27,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="hidden lg:mt-0 md:col-span-4 md:flex">
-            <Image width={496} height={635} className='rounded-md object-cover' src="/jaime-byn.jpeg" alt="Jaime Fernández Moreno" />
+            <Image priority width={496} height={635} className='rounded-md object-cover' src="/jaime-byn.jpeg" alt="Jaime Fernández Moreno" />
           </div>
         </div>
         <div className='container mx-auto flex justify-center'>
@@ -52,15 +52,15 @@ export default function Home() {
               </div>
               <Link target='_blank' href={'https://marisolpsicologa.com'}>
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                  <img className="w-full rounded-lg col-span-2" src="/marisol-psicologa.png" alt="web Marisol Psicóloga" />
-                  <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.png" alt="web Marisol Psicóloga móvil" />
+                  <Image width={1200} height={600} className="w-full rounded-lg col-span-2" src="/marisol-psicologa.jpeg" alt="web Marisol Psicóloga" />
+                  <Image width={700} height={1200} className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/marisol-psicologa-mobile.jpeg" alt="web Marisol Psicóloga móvil" />
                 </div>
               </Link>
             </div>
             <div className="gap-16 items-center py-6 lg:grid lg:grid-cols-2">
               <Link target='_blank' href={'https://lapicaraproducciones.com'}>
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                  <img className="w-full rounded-lg col-span-2" src="/lapicara-web.png" alt="web La Pícara" />
+                  <Image width={900} height={900} className="w-full rounded-lg col-span-2" src="/lapicara-web.jpeg" alt="web La Pícara" />
                 </div>
               </Link>
               <div className="font-light sm:text-lg">
@@ -77,8 +77,8 @@ export default function Home() {
               </div>
               <Link target='_blank' href={'https://adventuresinclass.com'}>
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                  <img className="w-full rounded-lg col-span-2" src="/adventures-in-class-web.png" alt="web Adventures in className" />
-                  <img className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/adventures-in-class-web-mobile.png" alt="web Adventures in className móvil" />
+                  <Image width={1074} height={871} className="w-full rounded-lg col-span-2" src="/adventures-in-class-web.jpeg" alt="web Adventures in class" />
+                  <Image width={386} height={806} className="mt-4 w-full lg:mt-10 rounded-lg col-span-1" src="/adventures-in-class-web-mobile.jpeg" alt="web Adventures in class móvil" />
                 </div>
               </Link>
             </div>
@@ -163,7 +163,7 @@ export default function Home() {
       <hr className="my-6 border-blue-bayoux-700 md:my-10 dark:border-blue-bayoux-300" />
 
       {/* Contacto */}
-      <section id='contacto' className="font-normal sm:text-lg">
+      <section id='contacto' className="font-normal sm:text-lg scroll-mt-16">
         <div className="container px-6 py-12 mx-auto">
           <SectionTitle>CONTACTO</SectionTitle>
           <p className="mt-3 ">Si quieres contactar conmigo para hacerme una consulta sobre cualquiera de los <strong>servicios</strong> que puedo ofrecer.</p>

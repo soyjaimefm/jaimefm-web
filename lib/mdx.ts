@@ -7,7 +7,7 @@ const postsPath = path.join(process.cwd(), 'posts')
 
 export const getFiles = () => fs.readdirSync(postsPath);
 
-export const getFileBySlug = async (slug) => {
+export const getFileBySlug = async (slug: string) => {
     const post = getFiles().find((post) => post.replace('.mdx', '') === slug);
     if (!post) {
         notFound();

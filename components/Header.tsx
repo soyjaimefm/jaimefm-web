@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import headerNavLinks from "@/data/headerNavLinks";
 import Link from "next/link";
@@ -7,8 +7,10 @@ import { GrClose } from "react-icons/gr";
 
 import ThemeSwitcher from "./ThemeSwitcher";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const pathName = usePathname();
 
   return (
     <header className='flex justify-center items-center py-5 w-full sticky top-0 bg-blue-bayoux-500 text-gray-50 min-h-16'>
@@ -25,7 +27,7 @@ export default function Header() {
           <div className={`items-center ${openMenu ? '' : 'hidden'} justify-between w-full md:flex md:w-auto md:order-1 `} >
             <ul className="flex flex-col p-4 md:p-0 mt-5 md:space-x-8 md:flex-row md:mt-0 md:border-0   bg-blue-bayoux-500 rounded-lg">
               {
-                headerNavLinks.map((navLink) => <li key={navLink.title}><Link className="py-2 px-3 font-title text-xl hover:opacity-70 block" onClick={() => { setOpenMenu(false) }} key={navLink.href} href={navLink.href}>{navLink.title}</Link></li>)
+                headerNavLinks.map((navLink) => <li key={navLink.title}><Link className={`py-2 px-3 font-title text-xl hover:opacity-70 block ${pathName === navLink.href ? 'text-orange' : ''}`} onClick={() => { setOpenMenu(false) }} key={navLink.href} href={navLink.href}>{navLink.title}</Link></li>)
               }
             </ul>
           </div>

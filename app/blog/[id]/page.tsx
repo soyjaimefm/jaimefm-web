@@ -4,6 +4,12 @@ import MDXComponents from "@/components/MDXComponents";
 import rehypePrettyCode from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
+import type { Metadata, ResolvingMetadata } from 'next'
+
+type Props = {
+    params: { id: string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
 
 const rehypeOptions = {
     theme: 'one-dark-pro'
@@ -21,7 +27,27 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function Post({ params }) {
+export async function generateMetadata(
+    { params }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+    const { id } = params;
+    const { meta } = await getFileBySlug(id);
+
+    return {
+        title: meta.title,
+        description: meta.description,
+        keywords: meta.tags,
+        openGraph: {
+            title: meta.title,
+            description: meta.description
+        },
+    }
+}
+
+
+export default async function Post({ params }: Props) {
     const { id } = params;
     const { content, meta } = await getFileBySlug(id);
     const { heroImage, title } = meta;
@@ -29,10 +55,10 @@ export default async function Post({ params }) {
     return (
         <>
             <article className="prose dark:prose-invert lg:prose-xl mx-auto px-4 py-12">
-                <div className="overflow-hidden mb-8 rounded-lg">
+                <div className="overflow-hidden mb-2">
                     {
                         heroImage && (
-                            <figure className="w-auto h-auto md:h-[480px] object-cover">
+                            <figure className="max-w-xl w-auto h-auto object-cover mx-auto">
                                 <Image
                                     className="rounded-lg"
                                     src={heroImage}

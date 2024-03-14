@@ -10,8 +10,19 @@ const exo2 = Exo_2({subsets: ['latin'], variable: "--font-title"});
 const bebasNeue = Bebas_Neue({subsets: ['latin'], variable: "--font-subtitle", weight: "400"});
 
 export const metadata: Metadata = {
-  title: 'Jaime FM | Desarrollador de software y programador web',
-  description: 'Trabajo en proyectos de desarrollo de software y web',
+  title: {
+    template: '%s | Jaime FM',
+    default: 'Jaime FM | Programación web'
+  },
+  description: 'Desarrollo de aplicaciones web utilizando las últimas tecnologías. Creo contenido sobre Programación y Desarrollo Web',
+  openGraph: {
+    title: {
+      template: '%s | Jaime FM',
+      default: 'Jaime FM | Programación web'
+    },
+    description: 'Desarrollo de aplicaciones web utilizando las últimas tecnologías. Creo contenido sobre Programación y Desarrollo Web'
+  },
+  metadataBase: new URL('https://jaimefm.dev'),
 }
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode;}>) {

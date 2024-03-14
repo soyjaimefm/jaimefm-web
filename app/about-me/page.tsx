@@ -2,6 +2,11 @@ import PageTitle from "@/components/PageTitle";
 import Timeline from "@/components/Timeline";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Sobre mí'
+}
 
 export default function AboutMe() {
   return (
