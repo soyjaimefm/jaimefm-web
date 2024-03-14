@@ -1,4 +1,5 @@
 import './globals.css'
+import { Analytics } from "@vercel/analytics/react"
 import { Inter, Exo_2, Bebas_Neue } from 'next/font/google'
 import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
           {children}
           <Footer />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
