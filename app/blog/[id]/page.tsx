@@ -32,7 +32,7 @@ export async function generateMetadata(
     { params }: Props
 ): Promise<Metadata> {
     const { id } = params;
-    const { meta } = await getFileBySlug(id);
+    const { meta } = getFileBySlug(id);
 
     return {
         title: meta.title,
