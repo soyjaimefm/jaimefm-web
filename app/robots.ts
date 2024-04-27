@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://jaimefm.dev/sitemap.xml',
+    sitemap: 'https://www.jaimefm.dev/sitemap.xml',
   }
 }
