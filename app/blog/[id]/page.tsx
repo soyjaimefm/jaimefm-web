@@ -16,7 +16,7 @@ const rehypeOptions = {
 }
 
 const mdxOptions: any = {
-    
+
     remarkPlugins: [[remarkGfm]],
     rehypePlugins: [[rehypePrettyCode, rehypeOptions]],
 }
@@ -52,27 +52,25 @@ export default async function Post({ params }: Props) {
     const { heroImage, title } = meta;
 
     return (
-        <>
-            <article className="prose dark:prose-invert lg:prose-xl mx-auto px-4 py-12">
-                <div className="overflow-hidden mb-2">
-                    {
-                        heroImage && (
-                            <figure className="max-w-xl w-auto h-auto object-cover mx-auto">
-                                <Image
-                                    className="rounded-lg"
-                                    src={heroImage}
-                                    alt={title}
-                                    width={960}
-                                    height={480}
-                                    decoding="async"
-                                    loading="lazy"
-                                />
-                            </figure>
-                        )
-                    }
-                </div>
-                <MDXRemote source={content} options={{ mdxOptions }} components={MDXComponents}></MDXRemote>
-            </article>
-        </>
+        <div className="prose dark:prose-invert lg:prose-xl mx-auto px-4 py-12">
+            <div className="overflow-hidden mb-2">
+                {
+                    heroImage && (
+                        <figure className="max-w-xl w-auto h-auto object-cover mx-auto">
+                            <Image
+                                className="rounded-lg"
+                                src={heroImage}
+                                alt={title}
+                                width={960}
+                                height={480}
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </figure>
+                    )
+                }
+            </div>
+            <MDXRemote source={content} options={{ mdxOptions }} components={MDXComponents}></MDXRemote>
+        </div>
     )
 }

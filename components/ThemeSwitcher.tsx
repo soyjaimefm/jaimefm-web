@@ -2,7 +2,8 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import Moon from '@/components/icons/Moon';
+import Sun from '@/components/icons/Sun';
 
 export default function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -18,7 +19,7 @@ export default function ThemeSwitcher() {
 
   return (
     <div className="w-12 cursor-pointer">
-      {(theme == "light") ? <FaMoon className="size-6" onClick={() => setTheme('dark')} /> : <FaSun className="size-6" onClick={() => setTheme('light')} />}
+      {(theme == "light") ? <Moon onClick={() => setTheme('dark')} /> : <Sun  onClick={() => setTheme('light')}/>}
     </div>
   )
 }

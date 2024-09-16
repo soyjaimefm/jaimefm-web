@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-blue-bayoux-500 text-gray-100 font-title">
+        <footer className="bg-FMblue text-FMwhite font-title">
             <div className="container px-6 py-8 mx-auto">
                 <div className="flex flex-col items-center text-center">
                     <Link href="/">
@@ -17,10 +17,10 @@ export default function Footer() {
                         }
                     </div>
                 </div>
-                <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
+                <hr className="my-6 md:my-10 border-FMsoftBlue" />
                 <div className="flex flex-col items-center sm:flex-row sm:justify-between">
                     <p className="text-lg mb-6 sm:mb-0">Desarrollado por Jaime Fernández Moreno 🚀</p>
-                    <Socials className='text-gray-100 mb-6 sm:mb-0' />
+                    {/* <Socials className='mb-6 sm:mb-0' /> */}
                 </div>
             </div>
         </footer>
